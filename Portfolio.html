@@ -343,6 +343,23 @@ footer a:hover {
     background: var(--gold);
     border-radius: 2px;
   }
+    /* Default flex: image left, text right */
+  .portfolio-item {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 50px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+  }
+
+  /* On mobile: stack image above text */
+  @media (max-width: 768px) {
+    .portfolio-item {
+      flex-direction: column !important;
+    }
+  }
 </style>
 </head>
 <body>
@@ -607,6 +624,7 @@ document.addEventListener('click', function(event){
     dropdown.classList.remove('active');
   }
 });
+
 
 
 </script>
